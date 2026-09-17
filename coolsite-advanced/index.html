@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CoolSite Arcade</title>
+<style>
+:root{--bg:#070b16;--panel:#10182b;--panel2:#17233c;--text:#f6f8ff;--muted:#aab7d3;--accent:#7c5cff;--accent2:#19d3ff;--good:#49e28c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:radial-gradient(circle at 20% 10%,#22204d 0,transparent 35%),radial-gradient(circle at 90% 20%,#063c52 0,transparent 30%),var(--bg);color:var(--text);min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,11,22,.75);backdrop-filter:blur(16px);border-bottom:1px solid #ffffff14}
+.navin{max-width:1150px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:22px}.logo{font-weight:900;font-size:22px;letter-spacing:-1px}.logo span{color:var(--accent2)}
+.links{display:flex;gap:6px}.links a{color:var(--muted);text-decoration:none;padding:9px 12px;border-radius:10px}.links a:hover{background:#ffffff0c;color:#fff}
+.search{margin-left:auto;display:flex;gap:8px}.search input{width:220px;background:#ffffff0b;border:1px solid #ffffff18;color:#fff;padding:10px 13px;border-radius:12px;outline:none}.search input:focus{border-color:var(--accent2)}
+main{max-width:1150px;margin:auto;padding:60px 20px}.hero{min-height:510px;display:grid;place-items:center;text-align:center;position:relative}.orb{position:absolute;width:360px;height:360px;border-radius:50%;background:linear-gradient(135deg,#7c5cff55,#19d3ff33);filter:blur(8px);animation:float 6s ease-in-out infinite}.hero>*{position:relative}.eyebrow{color:var(--accent2);font-weight:800;text-transform:uppercase;letter-spacing:3px}.hero h1{font-size:clamp(48px,9vw,100px);line-height:.9;margin:15px 0;background:linear-gradient(90deg,#fff,#a8c7ff,#7c5cff);-webkit-background-clip:text;color:transparent;animation:rise .8s ease both}.hero p{max-width:650px;color:var(--muted);font-size:19px;margin:25px auto}.cta{display:inline-block;background:linear-gradient(90deg,var(--accent),#4a9cff);color:white;text-decoration:none;padding:14px 20px;border-radius:13px;font-weight:800;box-shadow:0 10px 35px #7c5cff33;transition:.2s}.cta:hover{transform:translateY(-3px);box-shadow:0 15px 45px #7c5cff55}
+section{padding:55px 0}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.sectionhead h2{font-size:34px;margin:0}.sectionhead p{color:var(--muted);margin:5px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#ffffff0b,#ffffff05);border:1px solid #ffffff12;border-radius:20px;padding:22px;box-shadow:0 15px 45px #0003;transition:.25s}.card:hover{transform:translateY(-6px);border-color:#ffffff2b}.icon{font-size:42px}.card h3{margin:12px 0 8px}.card p{color:var(--muted);line-height:1.55}.play{border:0;cursor:pointer;color:white;background:var(--panel2);padding:10px 14px;border-radius:10px;font-weight:700}.play:hover{background:#263759}
+.gamebox{display:none;margin-top:20px;padding:20px;border-radius:18px;background:#080d19;border:1px solid #ffffff12}.gamebox.active{display:block}.score{font-size:30px;font-weight:900}.target{width:80px;height:80px;border:0;border-radius:50%;background:linear-gradient(135deg,#ff4d8d,#7c5cff);cursor:pointer;position:relative;transition:.12s}.game-area{height:250px;border-radius:14px;background:#0c1322;position:relative;overflow:hidden;margin-top:15px}.reaction{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.pill{padding:15px;border:1px solid #ffffff10;border-radius:14px;background:#ffffff06;color:#dbe5ff}.pill b{display:block;color:white;margin-bottom:5px}
+footer{border-top:1px solid #ffffff12;color:var(--muted);padding:30px 20px;text-align:center}
+.hidden{display:none!important}@keyframes float{50%{transform:translateY(-18px) scale(1.04)}}@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media(max-width:800px){.links{display:none}.search input{width:150px}.grid{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}}@media(max-width:520px){.grid,.features{grid-template-columns:1fr}.search{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="navin"><div class="logo">Cool<span>Site</span> ✦</div><div class="links"><a href="#home">Home</a><a href="#games">Games</a><a href="#features">Features</a><a href="#about">About</a></div><div class="search"><input id="search" placeholder="Search games..."></div></div></nav>
+
+<main>
+<section id="home" class="hero">
+<div class="orb"></div><div><div class="eyebrow">Welcome to the arcade</div><h1>PLAY.<br>EXPLORE.<br>HAVE FUN.</h1><p>A fast, stylish single-page site packed with mini-games, smooth animations, navigation, and instant search.</p><a class="cta" href="#games">Explore Games ↓</a></div>
+</section>
+
+<section id="games">
+<div class="sectionhead"><div><h2>Mini Games</h2><p>Everything runs directly in your browser.</p></div></div>
+<div class="grid" id="cards">
+<article class="card gamecard" data-name="click rush"><div class="icon">⚡</div><h3>Click Rush</h3><p>Click the target as many times as possible before the timer ends.</p><button class="play" onclick="startClickRush()">Play Game</button><div id="clickbox" class="gamebox"><div class="score">Score: <span id="score">0</span> · <span id="time">10</span>s</div><div class="game-area" id="clickarea"><div class="reaction">Get ready...</div></div></div></article>
+<article class="card gamecard" data-name="reaction test"><div class="icon">🎯</div><h3>Reaction Test</h3><p>Wait for the signal, then click as quickly as you can.</p><button class="play" onclick="startReaction()">Start Test</button><div id="reactionbox" class="gamebox"><div class="score" id="reactionmsg">Wait...</div><button class="target hidden" id="reactbtn">CLICK!</button></div></article>
+<article class="card gamecard" data-name="number guess"><div class="icon">🔢</div><h3>Number Guess</h3><p>Guess the secret number from 1 to 100 in as few tries as possible.</p><button class="play" onclick="startGuess()">Play Game</button><div id="guessbox" class="gamebox"><input id="guessinput" type="number" min="1" max="100" placeholder="1-100"><button class="play" onclick="guess()">Guess</button><p id="guessmsg">I picked a number.</p></div></article>
+</div>
+</section>
+
+<section id="features"><div class="sectionhead"><div><h2>Built In</h2><p>A clean foundation you can customize.</p></div></div><div class="features"><div class="pill"><b>✨ Animations</b>Floating gradients and hover effects.</div><div class="pill"><b>🔎 Search</b>Instantly filter the game cards.</div><div class="pill"><b>📱 Responsive</b>Works on phones and desktops.</div><div class="pill"><b>🚀 Static</b>No server or database required.</div></div></section>
+
+<section id="about"><div class="card"><h2>About CoolSite</h2><p>This is a self-contained HTML site. You can upload the file to a static host or place it in a GitHub repository and serve it through a CDN such as jsDelivr.</p></div></section>
+</main>
+<footer>CoolSite Arcade · Built with HTML, CSS & JavaScript</footer>
+<script>
+const $=id=>document.getElementById(id);
+$("search").addEventListener("input",e=>{let q=e.target.value.toLowerCase();document.querySelectorAll(".gamecard").forEach(c=>c.classList.toggle("hidden",!c.dataset.name.includes(q)))});
+let clickTimer,score=0;
+function startClickRush(){clearInterval(clickTimer);$("clickbox").classList.add("active");score=0;$("score").textContent=0;let t=10;$("time").textContent=t;moveTarget();clickTimer=setInterval(()=>{t--;$("time").textContent=t;if(t<=0){clearInterval(clickTimer);$("clickarea").innerHTML='<div class="reaction">Time! Final score: '+score+'</div>'}},1000)}
+function moveTarget(){let a=$("clickarea");a.innerHTML='<button class="target" id="target">+</button>';let b=$("target");b.style.position="absolute";b.style.left=Math.random()*(a.clientWidth-80)+"px";b.style.top=Math.random()*(a.clientHeight-80)+"px";b.onclick=()=>{score++;$("score").textContent=score;moveTarget()}}
+let reactionStart;
+function startReaction(){ $("reactionbox").classList.add("active");$("reactionmsg").textContent="Wait for green...";$("reactbtn").classList.add("hidden");setTimeout(()=>{reactionStart=performance.now();$("reactionmsg").textContent="GO!";$("reactbtn").classList.remove("hidden")},1000+Math.random()*3000)}
+$("reactbtn").onclick=()=>{$("reactionmsg").textContent=Math.round(performance.now()-reactionStart)+" ms";$("reactbtn").classList.add("hidden")};
+let secret,tries;
+function startGuess(){secret=Math.floor(Math.random()*100)+1;tries=0;$("guessbox").classList.add("active");$("guessmsg").textContent="I picked a number. Start guessing!"}
+function guess(){let n=Number($("guessinput").value);if(!n)return;tries++;$("guessmsg").textContent=n===secret?"🎉 Correct in "+tries+" tries!":n<secret?"Too low!":"Too high!"}
+</script>
+</body>
+</html>
